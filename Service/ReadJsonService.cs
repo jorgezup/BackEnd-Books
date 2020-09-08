@@ -73,9 +73,18 @@ namespace BooksAPI.Service
             }  
         }
 
-        public async Task<List<Book>> Search(string name, string author)
+        public async Task<List<Book>> Search(string name, string author, string order)
         {
-            List<Book> listBook = await GetAllBooks();
+            List<Book> listBook;
+            
+            if (order == null)
+            {
+                listBook = await GetAllBooks();
+            }
+            else
+            {
+                listBook = await OrderBy(order);
+            }
 
             if (name != null)
             {

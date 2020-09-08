@@ -37,9 +37,9 @@ namespace BooksApi.Controllers
         }
 
         [HttpGet("search")]
-        public async Task<List<Book>> GetParameterSearch([FromQuery] string name, [FromQuery] string author)
+        public async Task<List<Book>> GetParameterSearch([FromQuery] string name, [FromQuery] string author, [FromQuery] string order)
         {
-            return await _service.Search(name, author);
+            return await _service.Search(name, author, order);
         }
     }
 
