@@ -15,9 +15,12 @@ namespace BooksApi.Models
 
         public decimal price { get; set; }
 
-        public decimal frete { get; set; }
-
         public Specifications Specifications { get; set; }
+
+        public decimal GetFrete(decimal price)
+        {
+            return price+(price*20/100);
+        }
     }
 
     [JsonObject]
