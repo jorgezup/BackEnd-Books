@@ -12,14 +12,14 @@
 
 ## URLs do Projeto
 - Listar Todos os Livros
-[GetAllBooks][[https://localhost:5001/api/books]
+[GetAllBooks](https://localhost:5001/api/books)
 - Listar Apenas um Livro
-[GetById][[https://localhost:5001/api/books/{id}]
+[GetById](https://localhost:5001/api/books/{id})
 - Calcular o frete de um Livro
-[GetFrete][[https://localhost:5001/api/books/{id}/frete]
+[GetFrete](https://localhost:5001/api/books/{id}/frete)
 - Ordernar pelo preço (order=all, order=desc, order=asc)
-[Price][https://localhost:5001/api/books/price?order=desc]
+[Price](https://localhost:5001/api/books/price?order=desc)
 - Buscar por nome (do Livro) ou Autor (?name=)(?author=)
-[Search][https://localhost:5001/api/books/search?name=sea]
+[Search](https://localhost:5001/api/books/search?name=sea)
 - Buscar por nome (do Livro) ou Autor (?name=)(?author=) e Ordenar por Preço
-[Search][https://localhost:5001/api/books/search?name=the&order=desc]
+[SearchAndOrderPrice](https://localhost:5001/api/books/search?name=the&order=desc)
