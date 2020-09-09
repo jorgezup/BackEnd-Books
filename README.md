@@ -21,7 +21,7 @@
 [Price](https://localhost:5001/api/books/price?order=desc)
 - Buscar por nome (do Livro) ou Autor (?name=)(?author=)
 [Search](https://localhost:5001/api/books/search?name=sea)
-- Buscar por nome (do Livro) ou Autor (?name=)(?author=) e Ordenar por Preço
+- Buscar por nome (do Livro) ou Autor (?name=)(?author=) e Ordenar por Preço (&order=)
 [SearchAndOrderPrice](https://localhost:5001/api/books/search?name=the&order=desc)
 
 ## Detalhamento
@@ -29,7 +29,7 @@
 
 - ReadJson() -> utiliza o método httpClient para buscar o JSON disponibilizado ("https://raw.githubusercontent.com/timeiagro/BackendTest/master/books.json") e insere o conteúdo dele na variável apiResponse
 
-- Deserialize() -> deserializa o objeto e insere em uma Lista de Livros (<List<Book>>) e retorna essa lista.
+- Deserialize() -> deserializa o objeto e insere em uma Lista de Livros e retorna essa lista.
 
 - E por fim foram implementadas as seguintes funções:
   - GetAllBooks() -> responsável por buscar todos os livros;
