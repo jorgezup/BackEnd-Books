@@ -7,7 +7,7 @@ using BooksApi.Models;
 
 namespace BooksAPI.Service
 {
-    public class ReadFileService
+    public class BookService
     {
         HttpClientHandler _clientHandler = new HttpClientHandler();
         List<Book> _oBooks = new List<Book>();
@@ -47,13 +47,19 @@ namespace BooksAPI.Service
             return listBook.FirstOrDefault(book => book.id == id);
         }
 
-        public async Task<decimal> GetFrete(int id)
+        public async Task<Dictionary<string, decimal>> GetFrete(int id)
         {
             List<Book> listBook = await GetAllBooks();
 
             Book foundedBook = listBook.FirstOrDefault(book => book.id == id);
 
-            return foundedBook.GetFrete(foundedBook.price);
+            var Book = new Dictionary<string, decimal> 
+            {
+                { "id", foundedBook.id },
+                { "frete", foundedBook.GetFrete(foundedBook.price)}
+            };
+
+            return Book;
         }
 
         public async Task<List<Book>> OrderBy(string order="all")

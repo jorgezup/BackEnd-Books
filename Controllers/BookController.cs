@@ -10,7 +10,7 @@ namespace BooksApi.Controllers
     [ApiController]
     public class BookController : Controller
     {
-        ReadFileService _service = new ReadFileService();
+        BookService _service = new BookService();
 
         [HttpGet]
         public async Task<List<Book>> GetAllBooks()
@@ -25,7 +25,7 @@ namespace BooksApi.Controllers
         }
 
         [HttpGet("{id}/frete")]
-        public async Task<decimal> GetFrete(int id)
+        public async Task<Dictionary<string, decimal>> GetFrete(int id)
         {
             return await _service.GetFrete(id);
         }
